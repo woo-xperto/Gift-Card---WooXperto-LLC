@@ -333,10 +333,10 @@ function wodgc_type_product_data_content_fun() {
 
                                     <p>Use this "<b>[gift-card-check-info]</b>" short code any where for Gift card Number Check check info.</p>
 
-                                    <p>Enable edit card <b title="If this is checked Gift Card info. will be edit in cart page."> <span class="dashicons dashicons-editor-help"></span> </b>
+                                    <!-- <p>Enable edit card <b title="If this is checked Gift Card info. will be edit in cart page."> <span class="dashicons dashicons-editor-help"></span> </b>
 
-                                    <input class="gift-input" type="checkbox" name="wodgc_disable_edit_card" value="<?php echo $eGiftCard; ?>" <?php echo $editCheck?> >
-                                    </p>
+                                    <input class="gift-input" type="checkbox" name="wodgc_disable_edit_card" value="<?php /// echo $eGiftCard; ?>" <?php // echo $editCheck?> >
+                                    </p> -->
 
                                     <?php 
                                     

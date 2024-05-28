@@ -1,6 +1,6 @@
 <?php 
 /*
-Plugin Name: Gift Card - WooXperto LLC | wp.org
+Plugin Name: Gift Card - WooXperto LLC
 Requires Plugins: woocommerce
 Plugin URI: http://wooxperto.com/plugins/gift-card-wooxperto-llc
 Description: This plugin for every WordPress theme. Gift Card for WooCommerce is the fastest, fully customizable gift-card. # Designed, Developed, Maintained & Supported by wooXperto.
@@ -24,9 +24,6 @@ define( 'WODGC_ACC_URL', WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE_
 define( 'WODGC_ACC_PATH', plugin_dir_path( __FILE__ ) );
 
 require_once( WODGC_ACC_PATH . 'backend/wc-advanced-type-field.php' );
-require_once( WODGC_ACC_PATH . 'frontend/gift-card-cart-page.php' );
-
-
 
 require 'vendor/autoload.php';
 

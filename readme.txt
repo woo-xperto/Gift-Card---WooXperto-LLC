@@ -2,11 +2,11 @@
 Contributors: wooxperto
 Donate link: https://www.wooxperto.com/
 Author URI: https://www.wooxperto.com/
-Plugin URI: https://wordpress.org/plugins/gift-card-for-woocommerce-plugin/
+Plugin URI: https://wordpress.org/plugins/gift-card-wooxperto-llc/
 Tags: gift, gift card, gift certificates, woocommerce gift cards, gift vouchers, gift cards, gifts, certificate, gift cards woocommerce, woocommerce
 Requires at least: 5.2
-Tested up to: 6.4.3
-Stable tag: 1.0.0
+Tested up to: 6.5
+Stable tag: 1.0.1
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,7 +70,7 @@ Gift cards for WooCommerce help merchants to create, manage and sell digital gif
 > * **QR Codes** - Include a QR code on the gift card email, PDF, or both.
 > * **REST API** - Adheres to the WordPress and WooCommerce REST API standards. 
 
-Plugin Documentation: [https://wordpress.org/plugins/gift-card-for-woocommerce-plugin/](https://wordpress.org/plugins/gift-card-for-woocommerce-plugin/)
+Plugin Documentation: [https://wordpress.org/plugins/gift-card-wooxperto-llc/](https://wordpress.org/plugins/gift-card-wooxperto-llc/)
 
 *   [Live Demo](https://wooxperto.com/gift-card/)	
 *   [Need Help?](https://www.wooxperto/contact/)		
@@ -81,7 +81,7 @@ Plugin Documentation: [https://wordpress.org/plugins/gift-card-for-woocommerce-p
 [youtube https://www.youtube.com/@wooxperto]
 
 
-You can make my day by submitting a positive review on <a href="https://wordpress.org/plugins/gift-card-for-woocommerce-plugin/" target="_blank"><strong>WordPress.org!</strong></a></p>
+You can make my day by submitting a positive review on <a href="https://wordpress.org/plugins/gift-card-wooxperto-llc/" target="_blank"><strong>WordPress.org!</strong></a></p>
 
 
 = Minimum Requirements =
@@ -100,7 +100,7 @@ In the search field, type Gift Card - WooXperto LLC, and click Search Plugins. O
 
 The manual installation method involves downloading our Directory plugin and uploading it to your webserver via your favorite FTP application. The WordPress codex will tell you more [here](https://wordpress.org/documentation/article/manage-plugins/). [GeoDirectory basic installation](https://docs.wpgeodirectory.com/category/7-installation)
 
-1. Upload `gift-card-for-woocommerce-plugin` to the `/wp-content/plugins/` directory
+1. Upload `gift-card-wooxperto-llc` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 
