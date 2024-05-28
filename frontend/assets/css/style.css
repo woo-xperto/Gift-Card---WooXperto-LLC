@@ -1,0 +1,1317 @@
+.tab-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.tab-menu ul li a {
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: 0.5s all;
+    background: #2c3338;
+}
+
+.tab-menu ul li a:hover {
+    background: #233d52;
+    color: #fff;
+    text-decoration: none;
+}
+
+.tab-menu ul li a.active {
+    background: #2271b1;
+    color: #fff;
+    text-decoration: none;
+}
+
+.tab-box {
+    display: none;
+}
+
+.gcol-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+.gcol-wrap .gcol-1,
+.gcol-wrap .gcol-2 {
+    width: 46%;
+    padding: 12px;
+}
+
+.gcol-wrap .gcol-1 h3,
+.gcol-wrap .gcol-2 h3 {
+    text-align: center;
+}
+
+
+.error {
+    color:  red;
+}
+
+
+
+#gift_card_image_box_html {
+    width: 94% !important;
+    margin-bottom: 40px;
+}
+
+
+
+
+.form_row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .col_6 {
+      width: 50%;
+      float:left
+  }
+  .form_row .form_group {
+      padding: 0px 10px;
+  }
+  
+  .form_row {
+      margin: 0px -10px;
+  }
+  #gift_card_image{
+      width:100%;
+  }
+  .product_infos p.price {
+      display: none;
+  }
+  /*==== Gift Card First Div ===*/
+  
+  table.padding-bottom-table {
+      border: 0px;
+  }
+  #gift_card_image_box_html table {
+      border: 0px !important;
+  }
+  td.product-table-bottom-images.product-table-bottom-mobile {
+      border: 0px !important;
+  }
+  td.product-table-bottom-text.product-table-bottom-mobile {
+      border: 0px !important;
+  }
+  td.td-right-padding-tab {
+      border: 0px !important;
+  }
+  
+  
+  .woocommerce h2 {
+      font-size: 20px !important;
+  }
+  #product-top-images{
+      text-align:center;
+  }
+  div#product-top-images img {
+      padding-bottom: 30px;
+  }
+  .woocommerce td.product-name .wc-item-meta p{
+      float: left;
+  }
+  .woocommerce td.product-name .wc-item-meta{
+      margin: 0;
+  }
+  #gift_card_image_box_html .box_content {
+      padding: 20px;
+      min-height: 315px;
+      margin-top: 14px;
+  }
+  
+  
+  .box_content .min_price p#gift_card_value {
+      float: right;
+      font-weight: bold;
+  }
+  
+  .box_content .min_price p {
+      float: left;
+      margin-bottom: 0;
+      padding-bottom: 10px;
+      font-weight: 400;
+  }
+  
+  .box_content .min_price {
+      overflow: hidden;
+      margin-bottom: 10px;
+  }
+  
+  .box_content .rec_name p {
+      margin-bottom: 0;
+      padding-bottom: 5px;
+      font-weight: bold;
+  }
+  
+  .box_content .rec_name {
+      padding-bottom: 5px;
+  }
+  
+  .box_content .rec_name p span {
+      padding-left: 5px;
+      font-weight: 400;
+  }
+  .barcode-text-box {
+      display: flex;
+      justify-content: space-between;
+  }
+  .barcode-text-box .card_mgs {
+      max-width: 70%;
+  }
+  .barcode-text-box .barcode-image {
+      max-width: 30%;
+      text-align: right;
+  }
+  
+  .box_content .card_mgs {
+      padding: 10px 0px;
+  }
+  .barcode-image {
+      text-align: right;
+  }
+  hr.divider-line-hr {
+      background-color: #43454B;
+      height: 1px;
+      width: 100%;
+      margin: 10px 0px 30px 0px;
+  }
+  td.product-table-bottom-text {
+      width: 65%;
+  }
+  p.product-bottom-text {
+      letter-spacing: 2px;
+      font-size: 14px;
+  }
+  td.product-table-bottom-images {
+      width: 35%;
+      text-align: right;
+      padding-left: 10px;
+  }
+  tr.border-hide-product-page {
+      border-bottom-width: 0px !important;
+  }
+  table.padding-bottom-table {
+      margin-bottom: 0px;
+  }
+  
+  /*thumbnai img*/
+  .img_thumbnail ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+  }
+  
+  .img_thumbnail ul:after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+  
+  .img_thumbnail ul li {
+      width: 25%;
+      float: left;
+      margin-right: 4px;
+  }
+  
+  .img_thumbnail ul li img {
+      width: 100%;
+      border: 3px solid #f8f8f8;
+      cursor: pointer;
+      transition: .3s;
+      max-height: 80px;
+      object-fit: cover;
+  }
+  
+  .gcard-image{display: none;}
+  /*radio button*/
+  .radio_btn {
+      margin: 16px 0px;
+  }
+  .radio_btn input[type="radio"] {
+      display: none;
+  }
+  .radio_btn label {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      margin: 0px ;
+  }
+  
+  .radio_btn label span.woocommerce-Price-amount {
+      padding: 6px;
+      display: block;
+      margin-right: 4px;
+      min-width: 100px;
+  }
+  
+  .product_infos h2 {
+      font-size: 20px;
+      margin-bottom: 0;
+      line-height: 1.5;
+  }
+  .pform_area div{
+      position: relative;
+  }
+  
+  .pform_area div span.currency{
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      font-weight: bold;
+  }
+  .pform_area div span.require {
+      color: red;
+  }
+  .pform_area div input{
+      padding-left: 30px;
+  }
+  .pform_area label {
+      margin-bottom: 5px;
+      line-height: 1 !important;
+      text-transform: inherit;
+      font-size:14px;
+      font-weight: 600;
+  }
+  .pform_area div.form_group input, .pform_area div.form_group textarea {
+      padding-left: 10px;
+      /*
+      background: transparent;
+      border: 1px solid #999;
+      */
+      box-shadow: none;
+      border-radius: 0px;
+      margin-bottom: 0px;
+  }
+  .pform_area input[type="text"], textarea {
+      border-radius: 0px;
+      box-shadow: none;
+      width: 100%;
+  }
+  input#dDate {
+      width: 100%;
+      background: #f7f7f7;
+      padding: 10px 5px;
+      border: unset;
+  }
+  input#dDate:focus-visible {
+      border: unset !important;
+  }
+  .woocommerce input[type=text], .woocommerce-page input[type=text], textarea {
+      background-color: rgba(0, 0, 0, 0.03) !important;
+      border: none;
+  }
+  input:focus{
+      outline: none !important;
+  }
+  #price_area .img_thumbnail {
+      padding-top: 5px;
+      padding-bottom: 10px;
+  }
+  .product_infos .quantity.hidden {
+      display: none;
+  }
+  .pform_area h2 {
+      margin-top: 20px;
+      margin-bottom: 5px !important;
+      font-weight: normal;
+  }
+  .woocommerce div.product form.cart .single_add_to_cart_button, .woocommerce-page div.product form.cart .single_add_to_cart_button {
+      background: #000;
+      border-radius: 0px;
+      margin-top: 15px;
+      border: 1px solid #000;
+      font-weight: 600;
+  }
+  
+  .woocommerce div.product form.cart .single_add_to_cart_button:hover, .woocommerce-page div.product form.cart .single_add_to_cart_button:hover {
+      background: #444;
+      border-color: #4444;
+  }
+  .gift-card-pdf-download-link.home-back{
+      background: #000;
+      color: #fff !important;
+      padding: 10px;
+      width: 200px;
+      display: block !important;
+      text-align: center;
+  }
+  
+  /*===== single product page input field ====*/
+  .pform_area .form_row {
+      display: flex;
+  }
+  .pform_area .form_row .col_4 {
+      width: 33.33%;
+  }
+  .form-select {
+      width: 100%;
+      background: #F7F7F7 !important;
+      border: unset;
+      border-radius: unset !important;
+      height: 2.7rem;
+  }
+  .form_group.name_field input[type="text"] {
+      max-width: 50%;
+      display: block;
+  }
+  .radio-buttob-form{
+      display: grid;
+      padding: 16px 0px;
+  }
+  .barcode-image-second {
+      text-align: center;
+  }
+  
+  
+  /*================Image Tab==================*/
+  /* Style the tab */
+  .img_thumbnail .tab {
+      overflow: hidden;
+  }
+  
+  
+  /* Style the tab content */
+  .img_thumbnail .tabcontent {
+      display: none;
+      padding: 15px 0px;
+      border-top: none;
+  }
+  
+  #order_review .shop_table .product-total {
+      text-align: right;
+  }
+  
+  #order_review .shop_table .product-name, #order_review .shop_table .product-name td {
+      text-align: left !important;
+      padding-left: 0px;
+  }
+  
+  #order_review .shop_table tr.cart-subtotal td, #order_review .shop_table tr.order-total td {
+      text-align: right;
+  }
+  p#gift_card_message_text {
+      word-break: break-all;
+  }
+  .product_cat-gift-card p.price, .product_cat-gift-card h1.product_title {
+      display: none;
+  }
+  
+  /*date show hide CSS*/
+  .pform_area .toggle{
+      width: 18px;
+      height: 17px;
+      margin-top: 20px;
+      padding: 10px 0px 0px 15px;
+      background: #EC1A3B;
+      color: #FFF;
+      margin-right: 10px;
+      border-radius: 5px;
+  }
+  .pform_area .toggle-off.btn-sm {
+      padding-left: 0;
+  }
+  #wodgcToggleDateDiv{
+    margin-left:0px;
+    margin-bottom:20px;
+    display: flex;
+  }
+  #wodgcToggleDateDiv .ckBox{
+      margin: 10px 10px 0px 0px;
+  }
+  #priceDiv {
+     text-align:center;
+  }
+  #priceDiv .woocommerce-Price-amount {
+     font-weight:bold;
+  }
+  
+  /*date show hide css end*/
+  
+  /* giftCardWallet Cart Page Start */
+  .gift_wallet tr.cart-subtotal {
+      display: none;
+  }
+  table.wodgc_options_table.giftCardWallet td {
+      border: 0 !important;
+      padding: 0 !important;
+      font-size: 14px;
+  }
+  table.wodgc_options_table.giftCardWallet {
+      border: 0;
+  }
+  .gift_wallet .gift-checkout-btn {
+      display: flex;
+      justify-content: space-between;
+  }
+  /* giftCardWallet Cart Page Start The End */
+  
+  /* giftCardWallet Thanks page start */
+  .gift_wallet ul.wc-item-meta {
+      display: none;
+  }
+  .gift_wallet ul.woocommerce-order-overview.woocommerce-thankyou-order-details.order_details + section.woocommerce-order-details table.woocommerce-table.woocommerce-table--order-details.shop_table.order_details tfoot tr:nth-child(1) {
+      display: none;
+  }
+  
+  /* giftCardWallet Thanks page The End */
+  
+  
+  /*************************************/
+  /***** Start Now Crop Css ******/
+  /*************************************/
+  
+  .croppie-container {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .croppie-container .cr-image {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: 0 0;
+      max-height: none;
+      max-width: none;
+    }
+    
+    .croppie-container .cr-boundary {
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .croppie-container .cr-viewport,
+    .croppie-container .cr-resizer {
+      position: absolute;
+      border: 2px solid #fff;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      box-shadow: 0 0 2000px 2000px rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    
+    .croppie-container .cr-resizer {
+      z-index: 2;
+      box-shadow: none;
+      pointer-events: none;
+    }
+    
+    .croppie-container .cr-resizer-vertical,
+    .croppie-container .cr-resizer-horisontal {
+      position: absolute;
+      pointer-events: all;
+    }
+    
+    .croppie-container .cr-resizer-vertical::after,
+    .croppie-container .cr-resizer-horisontal::after {
+      display: block;
+      position: absolute;
+      box-sizing: border-box;
+      border: 1px solid black;
+      background: #fff;
+      width: 10px;
+      height: 10px;
+      content: '';
+    }
+    
+    .croppie-container .cr-resizer-vertical {
+      bottom: -5px;
+      cursor: row-resize;
+      width: 100%;
+      height: 10px;
+    }
+    
+    .croppie-container .cr-resizer-vertical::after {
+      left: 50%;
+      margin-left: -5px;
+    }
+    
+    .croppie-container .cr-resizer-horisontal {
+      right: -5px;
+      cursor: col-resize;
+      width: 10px;
+      height: 100%;
+    }
+    
+    .croppie-container .cr-resizer-horisontal::after {
+      top: 50%;
+      margin-top: -5px;
+    }
+    
+    .croppie-container .cr-original-image {
+      display: none;
+    }
+    
+    .croppie-container .cr-vp-circle {
+      border-radius: 50%;
+    }
+    
+    .croppie-container .cr-overlay {
+      z-index: 1;
+      position: absolute;
+      cursor: move;
+      touch-action: none;
+    }
+    
+    .croppie-container .cr-slider-wrap {
+      width: 75%;
+      margin: 15px auto;
+      text-align: center;
+    }
+    
+    .croppie-result {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .croppie-result img {
+      position: absolute;
+    }
+    
+    .croppie-container .cr-image,
+    .croppie-container .cr-overlay,
+    .croppie-container .cr-viewport {
+      -webkit-transform: translateZ(0);
+      -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /*************************************/
+    /***** STYLING RANGE INPUT ***********/
+    /*************************************/
+    /*http://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html */
+    /*************************************/
+    
+    .cr-slider {
+      -webkit-appearance: none;
+      /*removes default webkit styles*/
+      /*border: 1px solid white; */
+      /*fix for FF unable to apply focus style bug */
+      width: 300px;
+      /*required for proper track sizing in FF*/
+      max-width: 100%;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      background-color: transparent;
+    }
+    
+    .cr-slider::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 3px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 0;
+      border-radius: 3px;
+    }
+    
+    .cr-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #ddd;
+      margin-top: -6px;
+    }
+    
+    .cr-slider:focus {
+      outline: none;
+    }
+    
+    /*
+    .cr-slider:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+    }
+    */
+    
+    .cr-slider::-moz-range-track {
+      width: 100%;
+      height: 3px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 0;
+      border-radius: 3px;
+    }
+    
+    .cr-slider::-moz-range-thumb {
+      border: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #ddd;
+      margin-top: -6px;
+    }
+    
+    /*hide the outline behind the border*/
+    .cr-slider:-moz-focusring {
+      outline: 1px solid white;
+      outline-offset: -1px;
+    }
+    
+    .cr-slider::-ms-track {
+      width: 100%;
+      height: 5px;
+      background: transparent;
+      /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+      border-color: transparent;
+      /*leave room for the larger thumb to overflow with a transparent border */
+      border-width: 6px 0;
+      color: transparent;
+      /*remove default tick marks*/
+    }
+    
+    .cr-slider::-ms-fill-lower {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+    }
+    
+    .cr-slider::-ms-fill-upper {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+    }
+    
+    .cr-slider::-ms-thumb {
+      border: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #ddd;
+      margin-top: 1px;
+    }
+    
+    .cr-slider:focus::-ms-fill-lower {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .cr-slider:focus::-ms-fill-upper {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    
+    /*******************************************/
+    
+    /***********************************/
+    /* Rotation Tools */
+    /***********************************/
+    .cr-rotate-controls {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      z-index: 1;
+    }
+    
+    .cr-rotate-controls button {
+      border: 0;
+      background: none;
+    }
+    
+    .cr-rotate-controls i:before {
+      display: inline-block;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 22px;
+    }
+    
+    .cr-rotate-l i:before {
+      content: '↺';
+    }
+    
+    .cr-rotate-r i:before {
+      content: '↻';
+    }
+    
+    
+    
+    /*************************************/
+    /***** On Image Crop Style *****/
+    /*************************************/
+    
+    .disp-none {
+      display: none;
+    }
+    
+    .container-form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      padding-bottom: 0;
+    }
+    
+    .container-image {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    #upload-aphoto {
+      font-size: 16px;
+      padding: 6px 14px;
+      cursor: pointer;
+    }
+  
+    /*************************************/
+    /***** Off Image Crop Style *****/
+    /*************************************/
+    
+    /*************************************/
+    /***** On Crop Edit Style *****/
+    /*************************************/
+    
+    div#imageModalContainer {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      /* background: rebeccapurple; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+    }
+    .crop-container-bg {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #091e0c73;
+    }
+    .modal-crop-img-wrap {
+      width: 425px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 2px 2px 12px #333;
+      z-index: 1;
+    }
+    
+    .crop-body {
+      height: 400px;
+    }
+    
+    .crop-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 12px;
+    }
+    .crop-footer .crop-btn {
+      border: 0;
+      padding: 7px 15px;
+      border-radius: 3px;
+      margin-left: 5px;
+      margin-bottom: 18px;
+      cursor:pointer;
+    }
+    .crop-footer {
+      margin-left: 12px;
+    }
+    
+    button.crop-btn-close {
+      border: 0;
+      background: 0;
+      font-size: 20px;
+      color: red;
+      cursor:pointer;
+    }
+    
+    /*************************************/
+    /***** Off Crop Edit Style *****/
+    /*************************************/
+    
+    
+    /*************************************/
+    /***** Cart Page Edit info On *****/
+    /*************************************/
+    
+  
+    /*popup css Start now*/
+  .popup-wrap {
+      
+      width: 300px;
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+    /*   height:100vh; */
+    }
+    .Click-here {
+      cursor: pointer;
+      transition:background-image 3s ease-in-out;
+    }
+    
+    .popup-model-main {
+      text-align: center;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      -webkit-overflow-scrolling: touch;
+      outline: 0;
+      opacity: 0;
+      -webkit-transition: opacity 0.15s linear, z-index 0.15;
+      -o-transition: opacity 0.15s linear, z-index 0.15;
+      transition: opacity 0.15s linear, z-index 0.15;
+      z-index: -1;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    
+    .model-open {
+      z-index: 99999;
+      opacity: 1;
+      overflow: hidden;
+    }
+    .popup-model-inner {
+      -webkit-transform: translate(0, -25%);
+      -ms-transform: translate(0, -25%);
+      transform: translate(0, -25%);
+      -webkit-transition: -webkit-transform 0.3s ease-out;
+      -o-transition: -o-transform 0.3s ease-out;
+      transition: -webkit-transform 0.3s ease-out;
+      -o-transition: transform 0.3s ease-out;
+      transition: transform 0.3s ease-out;
+      transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+      display: inline-block;
+      vertical-align: middle;
+      width: 800px;
+      margin: 30px auto;
+      max-width: 97%;
+    }
+    .popup-model-wrap {
+      display: block;
+      width: 100%;
+      position: relative;
+      background-color: #fff;
+      border: 1px solid #999;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+      background-clip: padding-box;
+      outline: 0;
+      text-align: left;
+      padding: 20px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+    
+    .pop-up-content-wrap p, .pop-up-content-wrap ol li {
+        color: #000000;
+        font-style:normal;
+        text-transform:none;
+        font-weight: 400;
+        letter-spacing: normal;
+        vertical-align: baseline;
+        word-spacing: 0px;
+        font-size: 16px;
+        line-height:24px;
+        margin-bottom: 0.5em;
+    }
+    .pop-up-content-wrap h3 {
+        font-size: 20px;
+        line-height: 1.28205em;
+        margin-top: 1.28205em;
+        margin-bottom: 1.28205em;
+    }
+    .model-open .popup-model-inner {
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
+      position: relative;
+      z-index: 999;
+    }
+    .model-open .bg-overlay {
+      background: #000000;
+      z-index: 99;
+        opacity: 0.85;
+    }
+    .bg-overlay {
+      background: rgba(0, 0, 0, 0);
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      -webkit-transition: background 0.15s linear;
+      -o-transition: background 0.15s linear;
+      transition: background 0.15s linear;
+    }
+    .close-btn {
+      position: absolute;
+      right: 0;
+      top: -30px;
+      cursor: pointer;
+      z-index: 99;
+      font-size: 30px;
+      color: #ff160a;
+    }
+    /*popup css The end*/
+  
+    
+  
+    .pop-up-content-wrap {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+  .pop-up-content-wrap .form_group {
+      width: 50%;
+      padding: 7px;
+  }
+  
+  .pop-up-content-wrap .date_time {
+      width: 100%;
+      display: flex;
+  }
+  
+  .pop-up-content-wrap .form_group label {
+      display: block;
+      margin-bottom: 4px;
+      margin-top: 10px;
+  }
+  
+  .pop-up-content-wrap .form_group input, .pop-up-content-wrap .form_group.message-aria {
+      width: 100%;
+  }
+  .update-btn .cancel-btn {
+      background: #d0312a;
+  }
+  
+  /* 
+  .woocommerce-checkout .popup-wrap, .woocommerce-checkout button.Click-here  {
+      display: none;
+  }
+  
+  */
+  .hidden{display:none;}	
+  .radio-buttob-form.popup-checkbox {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  .popup-checkbox label input[type=radio] {
+      margin-top: -5px;
+  }
+  .require {
+      color: #b32d2e;
+      font-size: 22px;
+  }
+  .giftcardformError, .required  {
+      color: #b32d2e;
+  }
+  
+  /* table.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents  tbody tr:last-child {
+      opacity: 0;
+  }
+  table.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents tbody tr tbody tr:last-child {
+      opacity: 1;
+  } */
+  
+  
+  
+  
+  
+  
+    /*************************************/
+    /***** Cart Page Edit info Off *****/
+    /*************************************/
+    
+    #product-top-images img {
+      height: 80px;
+      margin: 0 auto;
+    }
+  
+  
+  
+    /*************************************/
+    /***** Gift card check info. On *****/
+    /*************************************/
+    
+  
+    .gift-card-from-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: space-between;
+    }
+    
+    .gift-card-from-wrap .gift-info-left {
+        width: 330px;
+        padding: 20px;
+        min-height: 300px;
+        box-shadow: 1px 1px 10px #ddd;
+        border-radius: 5px;
+        margin-right:10px;
+    }
+    
+    .gift-card-from-wrap .gift-info-right {
+        width: calc(100% - 350px);
+        padding: 20px;
+        min-height: 300px;
+        box-shadow: 1px 1px 10px #ddd;
+        border-radius: 5px;
+        margin-left:10px;
+    }
+    
+    .gift-card-from-wrap h4 {
+        text-align: center;
+    }
+    
+    .gift-card-from-wrap input {
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 6px 0;
+        font-size: 14px;
+    }
+
+    .card_info_wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .card_info_left {
+        width: 60%;
+        padding-right: 20px;
+    }
+    
+    .view_gift_info_right {
+        /* width: 50%; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+    }
+    
+    .card_info_right {
+        width: 38%;
+    }
+
+    /*************************************/
+    /***** Gift card check info. Off *****/
+    /*************************************/
+    
+  
+
+    .style3left {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .style3left .image_box {
+        position: absolute;
+        z-index: -1;
+    }
+    .style3left .box_content {
+        color: #fff;
+    }
+
+    .gift_loding{
+        animation: rotetSpin 3s linear infinite;
+        display: inline-block;
+        font-size: 18px;
+        line-height: 0;
+    }
+
+    @keyframes rotetSpin {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+
+
+
+    .cart-page-edit-info .form-element {
+        width: 50%;
+    }
+
+
+
+  
+  
+  /*Responsive MRana*/
+  @media (min-width: 768px) and (max-width: 1024px) {
+      .single-product.without-sidebar .image-content {
+          width: 50% !important;
+      }
+      .single-product.without-sidebar .single-product-infos {
+          display: inline-block;
+          width: 45% !important;
+          float: right !important;
+          margin-top: 0px !important;
+      }
+      .img_thumbnail ul li img {
+          max-height: 65px;
+      }
+  
+      td.td-right-padding-tab {
+          display: inline-block;
+          padding-right: 10px;
+          float: left;
+      }
+  
+      .radio_btn label span.woocommerce-Price-amount {
+          margin-bottom: 5px;
+      }
+      .product-table-bottom-mobile {
+              display: inherit;
+      }
+      td.td-right-padding-tab {
+              display: inline-block;
+              padding-right: 10px;
+      }
+      div#product-top-images img {
+              max-width: 85%;
+              padding-bottom: 10px;
+      }
+      .barcode-image {
+              text-align: center;
+      }
+  
+      .img_thumbnail .tab button {
+      margin: 0px 6px 10px 0px;
+      }
+      .summary.entry-summary {
+      float: right !important;
+      width: 46% !important;
+      }
+      .radio_btn label:first-child {
+      margin-right: 0px;
+      }
+      .radio_btn label {
+      margin-right: 5px;
+      }
+      .pform_area div span {
+      top: 8px;
+      }
+  
+      /*===== single product page input field ====*/
+      tr.border-hide-product-page {
+      text-align: left;
+      }
+  
+      .barcode-image-second {
+      padding-top: 30px;
+      }
+      td.td-right-padding-tab {
+          padding-left: 0px;
+      }
+  
+  }
+  
+  @media (max-width: 767px) {
+      .radio_btn label {
+          margin-bottom: 7px;
+      }
+      .product_infos h2 {
+          font-size: 20px;
+      }
+      .col_6 {
+          width: 100%;
+          float: left;
+      }
+      .img_thumbnail ul li img {
+          max-height: 55px;
+          border: 3px solid #f8f8f8;
+      }
+  
+      .product-table-bottom-mobile {
+              display: inherit;
+      }
+      td.td-right-padding-tab {
+              display: inline-block;
+              padding-right: 10px;
+      }
+      div#product-top-images img {
+              max-width: 85%;
+              padding-bottom: 10px;
+      }
+  
+      .barcode-image {
+              text-align: center;
+      }
+  
+      td.td-right-padding-tab {
+          display: inline-block;
+          padding-right: 10px;
+          /* float: left; */
+      }
+      .radio_btn label span.woocommerce-Price-amount {
+          margin-bottom: 5px;
+      }
+      td.td-right-padding-tab {
+            padding-right: 10px;
+          padding-left: 0px;
+      }
+      .img_thumbnail .tab button {
+      margin: 0px 6px 10px 0px;
+      }
+      .radio_btn label:first-child {
+      margin-right: 0px;
+      }
+      .radio_btn label {
+      margin-right: 5px;
+      }
+      .form_group {
+          margin-bottom: 10px;
+      }
+      .pform_area div span {
+      top: 10px;
+      }
+  
+      /*===== single product page input field ====*/
+          tr.border-hide-product-page {
+              text-align: left;
+      }
+      .form_group.name_field input[type="text"] {
+              max-width: 100%;
+      }
+      .barcode-image-second {
+          padding-top: 30px;
+      }
+      .woocommerce .woocommerce-cart-form table.shop_table.shop_table_responsive.cart tr td, .woocommerce-page table.shop_table_responsive.cart tr td {
+          text-align: left!important;
+      }
+      .woocommerce table.shop_table_responsive tr td::before, .woocommerce-page table.shop_table_responsive tr td::before {
+          margin-right: 5px;
+      }
+  }
+  
+  
+  
+  
+  
+/*============= 
+responsive CSS3 Start Now >---> 
+==============*/
+
+/*=================
+responsive CSS3 The End <---<
+===================*/
+
