@@ -20,111 +20,12 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 
-/**
- * Hook: woocommerce_before_single_product.
- *
- * @hooked woocommerce_output_all_notices - 10
- */
-do_action( 'woocommerce_before_single_product' );
-
 if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
-	return;
 }
-
-
 ?>
 
-<style>
-
-	/*multi giftcard*/
-	.woocommerce div.product form.cart .button.single_add_to_cart_button, .hidden{
-		display: none;
-	}
-
-	/* Style the buttons inside the tab */
-	.img_thumbnail .tab button {
-		background-color: inherit;
-		float: left;
-		outline: none;
-		cursor: pointer;
-		transition: 0.3s;
-		font-size: 14px;
-		padding: 10px 10px;
-		border-radius: unset;
-		font-weight: 500;
-		margin-bottom: 5px;
-		margin-right: 5px;
-		border: 1px solid #000; /* BTN_BG  BTN_TC*/
-		color:#666;
-	}
-	.radio_btn label:first-child {
-		margin-left: 0;
-	}
-	.radio_btn label:last-child, .img_thumbnail .tab button:last-child  {
-		margin-right: -5px;
-	}
-	.radio_btn label {
-		margin-bottom: 5px;
-	}
-
-	.woocommerce-Price-amount {
-		font-size: 14px !important;
-		text-align: center;
-	}
-
-	#gift_card_image_box_html .box_content {
-		border: 2px solid #000;
-	}
-	.img_thumbnail ul li img:hover,.img_thumbnail ul li img.active {
-		border-color: #000;
-	}
-	.radio_btn label span.woocommerce-Price-amount {
-		border: 1px solid #000;
-	}
-
-	.radio_btn label span.woocommerce-Price-amount:hover, .radio_btn input[type="radio"]:checked + span.woocommerce-Price-amount, .img_thumbnail .tab button.active, .img_thumbnail .tab button:hover {
-		background: #000;
-		color: #fff;
-		transition:.3s;
-	}
-
-	.ui-state-default{
-		color: #666 !important;
-	}
-
-	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-default.ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
-		border: 1px solid #000;
-		background: #000;
-		font-weight: normal;
-		color: #ffffff !important;
-		/* font-family: auto !important; */
-	}
-	button#submitGiftCardFormBtn {
-		background: #000;
-		color: #fff;
-		border: 0;
-	}
-
-	button#submitGiftCardFormBtn:hover {
-		background: red; /* BTN_BG_H */
-	}
-	.giftcardformError {
-		color: red;
-		font-size: 12px;
-	}
-
-	/* Product bradcum, product title, product category, product price */
-	#accordion nav.woocommerce-breadcrumb, #accordion span.single-product-category, #accordion .product_title.entry-title, #accordion .price span.woocommerce-Price-amount.amount, #accordion .product_meta span.posted_in  {
-		display: none;
-	}
-	#accordion  form + .product_meta {
-		display: none;
-	}
-
-
-
-</style>
+<div class="wodgc_sa_wrap">
 
 <div id="accordion">
 	<h3 class="product-title-gift" id="productHeader-<?php the_ID(); ?>"><?php the_title();?> -1</h3>
@@ -152,14 +53,12 @@ if ( post_password_required() ) {
 				$default_image=plugin_dir_url(__FILE__ ).'assets/images/4k.jpg';
 			}
 
-
 			$btnTabs = '';
 			$imgsTab = '';
 
 			$tabImages = get_post_meta( $product->get_id(), 'wodgc_tab_images', true );
 			$tabImgCheck = get_post_meta( $product->get_id(), 'gift_card_enable_product_gallery_img', true );
-			// echo $tabImgCheck. "======= <br>--------". $tabImages;
-
+			
 			if($tabImgCheck ==='true'){
 
 				$tabsData = json_decode($tabImages, true);
@@ -186,7 +85,6 @@ if ( post_password_required() ) {
 					';
 				}
 				
-
 			}
 
 			if($tabImgCheck ==='true'){
@@ -245,12 +143,8 @@ if ( post_password_required() ) {
 
 			</div>
 			
-			<input type="hidden" name="gift_card_image" value="'.$default_image.'">
-			';
+			<input type="hidden" name="gift_card_image" value="'.$default_image.'">';
 			
-
-
-
 			$userImg      = get_post_meta( $product->get_id(), 'gift_card_enable_user_upload_img', true );
 			if($userImg === 'true'){
 			echo ' 
@@ -275,25 +169,7 @@ if ( post_password_required() ) {
 			}else{
 				$user_img = '';
 			}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			?>
-
-			<?php 
+			
 				echo '<h2>Select a price</h2>';
 
 				global $post;
@@ -395,8 +271,6 @@ if ( post_password_required() ) {
 							</div>';
 						}
 						
-
-
 					}
 
 				} else {
@@ -407,12 +281,6 @@ if ( post_password_required() ) {
 				echo '<input type="hidden" name="product_id" value="'.$post->ID.'"/>';
 
 			?>
-
-				<!-- <script>
-					let giftCardInfoFrom = '<?php // echo $meta_data; ?>';
-					// console.log(giftCardInfoFrom);
-					
-				</script> -->
 
         </div>
 		<!-- The end Right side -->
@@ -436,9 +304,8 @@ if ( post_password_required() ) {
 </div>
 
 
-<?php 
+</div>
 
-do_action( 'woocommerce_after_single_product' ); ?>
 
 
 

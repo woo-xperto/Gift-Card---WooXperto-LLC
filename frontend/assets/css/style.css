@@ -49,15 +49,10 @@
     color:  red;
 }
 
-
-
 #gift_card_image_box_html {
     width: 94% !important;
     margin-bottom: 40px;
 }
-
-
-
 
 .form_row::after {
     content: "";
@@ -276,10 +271,6 @@
   }
   .pform_area div.form_group input, .pform_area div.form_group textarea {
       padding-left: 10px;
-      /*
-      background: transparent;
-      border: 1px solid #999;
-      */
       box-shadow: none;
       border-radius: 0px;
       margin-bottom: 0px;
@@ -364,13 +355,11 @@
       text-align: center;
   }
   
-  
   /*================Image Tab==================*/
   /* Style the tab */
   .img_thumbnail .tab {
       overflow: hidden;
   }
-  
   
   /* Style the tab content */
   .img_thumbnail .tabcontent {
@@ -378,16 +367,13 @@
       padding: 15px 0px;
       border-top: none;
   }
-  
   #order_review .shop_table .product-total {
       text-align: right;
   }
-  
   #order_review .shop_table .product-name, #order_review .shop_table .product-name td {
       text-align: left !important;
       padding-left: 0px;
   }
-  
   #order_review .shop_table tr.cart-subtotal td, #order_review .shop_table tr.order-total td {
       text-align: right;
   }
@@ -397,7 +383,6 @@
   .product_cat-gift-card p.price, .product_cat-gift-card h1.product_title {
       display: none;
   }
-  
   /*date show hide CSS*/
   .pform_area .toggle{
       width: 18px;
@@ -454,7 +439,6 @@
   .gift_wallet ul.woocommerce-order-overview.woocommerce-thankyou-order-details.order_details + section.woocommerce-order-details table.woocommerce-table.woocommerce-table--order-details.shop_table.order_details tfoot tr:nth-child(1) {
       display: none;
   }
-  
   /* giftCardWallet Thanks page The End */
   
   
@@ -996,12 +980,6 @@
       background: #d0312a;
   }
   
-  /* 
-  .woocommerce-checkout .popup-wrap, .woocommerce-checkout button.Click-here  {
-      display: none;
-  }
-  
-  */
   .hidden{display:none;}	
   .radio-buttob-form.popup-checkbox {
       width: 100%;
@@ -1022,18 +1000,6 @@
   .giftcardformError, .required  {
       color: #b32d2e;
   }
-  
-  /* table.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents  tbody tr:last-child {
-      opacity: 0;
-  }
-  table.shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents tbody tr tbody tr:last-child {
-      opacity: 1;
-  } */
-  
-  
-  
-  
-  
   
     /*************************************/
     /***** Cart Page Edit info Off *****/
@@ -1114,8 +1080,6 @@
     /***** Gift card check info. Off *****/
     /*************************************/
     
-  
-
     .style3left {
         position: relative;
         z-index: 1;
@@ -1145,16 +1109,109 @@
         }
     }
 
-
-
     .cart-page-edit-info .form-element {
         width: 50%;
     }
+/*************************************/
+/***** Gift card single product On *****/
+/*************************************/
+
+	/*multi giftcard*/
+	.wodgc_sa_wrap .woocommerce div.product form.cart .button.single_add_to_cart_button, .hidden{
+		display: none;
+	}
+
+	/* Style the buttons inside the tab */
+	.wodgc_sa_wrap .img_thumbnail .tab button {
+		background-color: inherit;
+		float: left;
+		outline: none;
+		cursor: pointer;
+		transition: 0.3s;
+		font-size: 14px;
+		padding: 10px 10px;
+		border-radius: unset;
+		font-weight: 500;
+		margin-bottom: 5px;
+		margin-right: 5px;
+		border: 1px solid #000; /* BTN_BG  BTN_TC*/
+		color:#666;
+	}
+	.wodgc_sa_wrap .radio_btn label:first-child {
+		margin-left: 0;
+	}
+	.wodgc_sa_wrap .radio_btn label:last-child, .img_thumbnail .tab button:last-child  {
+		margin-right: -5px;
+	}
+	.wodgc_sa_wrap .radio_btn label {
+		margin-bottom: 5px;
+	}
+
+	.wodgc_sa_wrap .woocommerce-Price-amount {
+		font-size: 14px !important;
+		text-align: center;
+	}
+
+	.wodgc_sa_wrap #gift_card_image_box_html .box_content {
+		border: 2px solid #000;
+	}
+	.wodgc_sa_wrap .img_thumbnail ul li img:hover,.img_thumbnail ul li img.active {
+		border-color: #000;
+	}
+	.wodgc_sa_wrap .radio_btn label span.woocommerce-Price-amount {
+		border: 1px solid #000;
+	}
+
+	.wodgc_sa_wrap .radio_btn label span.woocommerce-Price-amount:hover, .wodgc_sa_wrap .radio_btn input[type="radio"]:checked + span.woocommerce-Price-amount, .wodgc_sa_wrap .img_thumbnail .tab button.active, .wodgc_sa_wrap .img_thumbnail .tab button:hover {
+		background: #000;
+		color: #fff;
+		transition:.3s;
+	}
+	.wodgc_sa_wrap .ui-state-default{
+		color: #666 !important;
+	}
+
+	.wodgc_sa_wrap .ui-state-active, .wodgc_sa_wrap .ui-widget-content .wodgc_sa_wrap .ui-state-active, .wodgc_sa_wrap .ui-widget-header .wodgc_sa_wrap .ui-state-default.ui-state-active, .wodgc_sa_wrap a.ui-button:active, .wodgc_sa_wrap .ui-button:active, .wodgc_sa_wrap .ui-button.ui-state-active:hover {
+		border: 1px solid #000;
+		background: #000;
+		font-weight: normal;
+		color: #ffffff !important;
+		/* font-family: auto !important; */
+	}
+	.wodgc_sa_wrap button#submitGiftCardFormBtn {
+		background: #000;
+		color: #fff;
+		border: 0;
+	}
+
+	.wodgc_sa_wrap button#submitGiftCardFormBtn:hover {
+		background: red; /* BTN_BG_H */
+	}
+	.wodgc_sa_wrap .giftcardformError {
+		color: red;
+		font-size: 12px;
+	}
+
+	/* Product bradcum, product title, product category, product price */
+	.wodgc_sa_wrap #accordion nav.woocommerce-breadcrumb, .wodgc_sa_wrap #accordion span.single-product-category, .wodgc_sa_wrap #accordion .product_title.entry-title, .wodgc_sa_wrap #accordion .price span.woocommerce-Price-amount.amount, .wodgc_sa_wrap #accordion .product_meta span.posted_in  {
+		display: none;
+	}
+	.wodgc_sa_wrap #accordion  form + .product_meta {
+		display: none;
+	}
+
+/*************************************/
+/***** Gift card single product Off *****/
+/*************************************/
+    
 
 
 
   
-  
+/*============= 
+responsive CSS3 Start Now >---> 
+==============*/
+
   /*Responsive MRana*/
   @media (min-width: 768px) and (max-width: 1024px) {
       .single-product.without-sidebar .image-content {
@@ -1169,13 +1226,11 @@
       .img_thumbnail ul li img {
           max-height: 65px;
       }
-  
       td.td-right-padding-tab {
           display: inline-block;
           padding-right: 10px;
           float: left;
       }
-  
       .radio_btn label span.woocommerce-Price-amount {
           margin-bottom: 5px;
       }
@@ -1193,7 +1248,6 @@
       .barcode-image {
               text-align: center;
       }
-  
       .img_thumbnail .tab button {
       margin: 0px 6px 10px 0px;
       }
@@ -1303,14 +1357,6 @@
       }
   }
   
-  
-  
-  
-  
-/*============= 
-responsive CSS3 Start Now >---> 
-==============*/
-
 /*=================
 responsive CSS3 The End <---<
 ===================*/

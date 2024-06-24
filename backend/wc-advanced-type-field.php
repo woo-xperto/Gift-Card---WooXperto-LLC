@@ -144,14 +144,14 @@ function wodgc_type_product_data_content_fun() {
                                     ?>
                                     <p>
                                     <select name="wodgc_pdf_style_template" id="wodgc_pdf_style_template" onchange="wodgcPdfImgPreview()" >
-                                        <option value="pdfStyle1" <?php echo $pdfS1 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle1.jpg"; ?>" >PDF Style 1</option>
-                                        <option value="pdfStyle2" <?php echo $pdfS2 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle2.jpg"; ?>" >PDF Style 2</option>
-                                        <option value="pdfStyle3" <?php echo $pdfS3 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle3.jpg"; ?>" >PDF Style 3</option>
-                                        <option value="pdfStyle4" <?php echo $pdfS4 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle4.jpg"; ?>" >PDF Style 4</option>
-                                        <option value="pdfStyle5" <?php echo $pdfS5 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle5.jpg"; ?>" >PDF Style 5</option>
-                                        <option value="pdfStyle6" <?php echo $pdfS6 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle6.jpg"; ?>" >PDF Style 6</option>
-                                        <option value="pdfStyle7" <?php echo $pdfS7 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle7.jpg"; ?>" >PDF Style 7</option>
-                                        <option value="pdfStyle8" <?php echo $pdfS8 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle8.jpg"; ?>" >PDF Style 8</option>
+                                        <option value="pdfStyle1" <?php echo esc_attr($pdfS1) ?> imgLink="<?php echo esc_url(WODGC_ACC_URL."backend/assets/images/pdfStyle1.jpg"); ?>" >PDF Style 1</option>
+                                        <option value="pdfStyle2" <?php echo esc_attr($pdfS2) ?> imgLink="<?php echo esc_url(WODGC_ACC_URL."backend/assets/images/pdfStyle2.jpg"); ?>" >PDF Style 2</option>
+                                        <option value="pdfStyle3" <?php echo esc_attr($pdfS3) ?> imgLink="<?php echo esc_url(WODGC_ACC_URL."backend/assets/images/pdfStyle3.jpg"); ?>" >PDF Style 3</option>
+                                        <option value="pdfStyle4" <?php echo esc_attr($pdfS4) ?> imgLink="<?php echo esc_url(WODGC_ACC_URL."backend/assets/images/pdfStyle4.jpg"); ?>" >PDF Style 4</option>
+                                        <option value="pdfStyle5" <?php echo esc_attr($pdfS5) ?> imgLink="<?php echo esc_url(WODGC_ACC_URL."backend/assets/images/pdfStyle5.jpg"); ?>" >PDF Style 5</option>
+                                        <option value="pdfStyle6" <?php echo esc_attr($pdfS6) ?> imgLink="<?php echo esc_url(WODGC_ACC_URL."backend/assets/images/pdfStyle6.jpg"); ?>" >PDF Style 6</option>
+                                        <option value="pdfStyle7" <?php echo esc_attr($pdfS7) ?> imgLink="<?php echo esc_url(WODGC_ACC_URL."backend/assets/images/pdfStyle7.jpg"); ?>" >PDF Style 7</option>
+                                        <option value="pdfStyle8" <?php echo esc_attr($pdfS8) ?> imgLink="<?php echo esc_url(WODGC_ACC_URL."backend/assets/images/pdfStyle8.jpg"); ?>" >PDF Style 8</option>
                                     </select>
                                     <span class="dashicons dashicons-visibility" onclick="wodgcPreviewImageShownInPopup()" ></span>
                                     </p>
@@ -356,16 +356,16 @@ function wodgc_type_product_data_content_fun() {
 
                                     <p>Send Email <b title="if this is unchecked Gift Card email not send."> <span class="dashicons dashicons-editor-help"></span> </b>
 
-                                    <input class="gift-input" type="checkbox" name="wodgc_send_email" value="<?php echo $emailS; ?>" <?php echo $checkEmail?> onclick="wodgc_showEmailSendOption()">
+                                    <input class="gift-input" type="checkbox" name="wodgc_send_email" value="<?php echo esc_attr($emailS); ?>" <?php echo esc_attr($checkEmail); ?> onclick="wodgc_showEmailSendOption()">
                                     </p>
                                     <p id="emailErrorNotification"></p>
 
                                     <div id="sendEmail" style="display:none">
                                         <p class="radio-btn">After checkout 
-                                            <input class="gift-input" type="radio" name="gift_card_send_email_enable" value="wodgc_email_after_checkout" <?php echo $emailSend1; ?> >
+                                            <input class="gift-input" type="radio" name="gift_card_send_email_enable" value="wodgc_email_after_checkout" <?php echo esc_attr($emailSend1); ?> >
                                         </p>
                                         <p class="radio-btn" id="userDateTimieSet">User Set DateTime 
-                                            <input class="gift-input" type="radio" name="gift_card_send_email_enable" value="wodgc_email_user_set_date" <?php echo $emailSend2; ?> >
+                                            <input class="gift-input" type="radio" name="gift_card_send_email_enable" value="wodgc_email_user_set_date" <?php echo esc_attr($emailSend2); ?> >
                                         </p>
                                     </div>
 
@@ -409,12 +409,12 @@ function wodgc_type_product_data_content_fun() {
                                     <p class=" form-field">
                                         <label for="discount_type">Discount type</label>
                                         <select style="" id="discount_type" name="wodgc_discount_type" class="select short">
-                                            <option value="fixed_cart" <?php echo $fixedCart;?> >Fixed cart discount</option>
-                                            <option value="fixed_product" <?php echo $fixedPro;?> >Fixed product discount</option>
+                                            <option value="fixed_cart" <?php echo esc_attr($fixedCart);?> >Fixed cart discount</option>
+                                            <option value="fixed_product" <?php echo esc_attr($fixedPro);?> >Fixed product discount</option>
                                         </select>
                                     </p>
                                     <p class="form-field">
-                                        <label for="wodgc_free_shipping">Allow free shipping</label><input type="checkbox" class="checkbox" style="" name="wodgc_free_shipping" id="wodgc_free_shipping" value="<?php echo $shipping;?>" <?php echo $shipCheck;?>> <span class="description">Tick this box if the coupon grants free shipping. A <a href="https://docs.woocommerce.com/document/free-shipping/" target="_blank">free shipping method</a> must be enabled in your shipping zone and be set to require "a valid free shipping coupon" (see the "Free Shipping Requires" setting).</span>
+                                        <label for="wodgc_free_shipping">Allow free shipping</label><input type="checkbox" class="checkbox" style="" name="wodgc_free_shipping" id="wodgc_free_shipping" value="<?php echo esc_attr($shipping);?>" <?php echo esc_attr($shipCheck);?>> <span class="description">Tick this box if the coupon grants free shipping. A <a href="https://docs.woocommerce.com/document/free-shipping/" target="_blank">free shipping method</a> must be enabled in your shipping zone and be set to require "a valid free shipping coupon" (see the "Free Shipping Requires" setting).</span>
                                     </p>
 
                                     <h2><b>Usage limits</b></h2>
@@ -440,10 +440,10 @@ function wodgc_type_product_data_content_fun() {
                                         </p>
                                     </div>
                                     <p class="form-field">
-                                        <label for="wodgc_individual_use">Individual use only</label><input type="checkbox" class="checkbox" style="" name="wodgc_individual_use" id="wodgc_individual_use" value="<?php echo $individualUse;?>" <?php echo $useCheck;?> > <span class="description">Tick this box if the coupon cannot be used in conjunction with other coupons.</span>
+                                        <label for="wodgc_individual_use">Individual use only</label><input type="checkbox" class="checkbox" style="" name="wodgc_individual_use" id="wodgc_individual_use" value="<?php echo $individualUse;?>" <?php echo esc_attr($useCheck);?> > <span class="description">Tick this box if the coupon cannot be used in conjunction with other coupons.</span>
                                     </p>
                                     <p class="form-field">
-                                        <label for="wodgc_exclude_sale_items">Exclude sale items</label><input type="checkbox" class="checkbox" style="" name="wodgc_exclude_sale_items" id="wodgc_exclude_sale_items" value="<?php echo $eSItems;?>" <?php echo $itemCheck;?> > <span class="description">Check this box if the coupon should not apply to items on sale. Per-item coupons will only work if the item is not on sale. Per-cart coupons will only work if there are items in the cart that are not on sale.</span>
+                                        <label for="wodgc_exclude_sale_items">Exclude sale items</label><input type="checkbox" class="checkbox" style="" name="wodgc_exclude_sale_items" id="wodgc_exclude_sale_items" value="<?php echo esc_attr($eSItems);?>" <?php echo  esc_attr($itemCheck);?> > <span class="description">Check this box if the coupon should not apply to items on sale. Per-item coupons will only work if the item is not on sale. Per-cart coupons will only work if there are items in the cart that are not on sale.</span>
                                     </p>
                                 
                                     <p class=" form-field">
@@ -468,7 +468,7 @@ function wodgc_type_product_data_content_fun() {
                                                         $selected = '';
                                                     }
 
-                                                    echo '<option value="'.esc_attr($product_id).'" '.$selected.'>'. esc_html($product_name).'</option>';
+                                                    echo '<option value="'.esc_attr($product_id).'" '.esc_attr($selected).'>'. esc_html($product_name).'</option>';
                                                 }
                                             }
                                             wp_reset_postdata();
@@ -589,26 +589,15 @@ function wodgc_type_product_data_content_fun() {
 
                                         $style1 = ("wodgc_style_template_1" === $styleFo) ? "selected" : "";
                                         $style2 = ("wodgc_style_template_2" === $styleFo) ? "selected" : "";
-                                        $style3 = ("wodgc_style_template_3" === $styleFo) ? "selected" : "";
-                                        $style4 = ("wodgc_style_template_4" === $styleFo) ? "selected" : "";
-                                        $style5 = ("wodgc_style_template_5" === $styleFo) ? "selected" : "";
-                                        $style6 = ("wodgc_style_template_6" === $styleFo) ? "selected" : "";
-                                        $style7 = ("wodgc_style_template_7" === $styleFo) ? "selected" : "";
-                                        $style8 = ("wodgc_style_template_8" === $styleFo) ? "selected" : "";
                                     ?>
                                     <p>
                                     <select name="wodgc_style_template" id="wodgc_style_template" onchange="wodgcSetImgPreview()">
-                                        <option value="wodgc_style_template_1" <?php echo $style1 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/wodgc_style_template_1.jpg"; ?>" >Style 1</option>
-                                        <option value="wodgc_style_template_2" <?php echo $style2 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/wodgc_style_template_2.jpg"; ?>" >Style 2</option>
-                                        <option value="wodgc_style_template_3" <?php echo $style3 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/wodgc_style_template_3.jpg"; ?>" >Style 3</option>
-                                        <option value="wodgc_style_template_4" <?php echo $style4 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/wodgc_style_template_4.jpg"; ?>" >Style 4</option>
-                                        <option value="wodgc_style_template_5" <?php echo $style5 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/wodgc_style_template_5.jpg"; ?>" >Style 5</option>
-                                        <option value="wodgc_style_template_6" <?php echo $style6 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/wodgc_style_template_6.jpg"; ?>" >Style 6</option>
-                                        <option value="wodgc_style_template_7" <?php echo $style7 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/wodgc_style_template_7.jpg"; ?>" >Style 7</option>
-                                        <option value="wodgc_style_template_8" <?php echo $style8 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/wodgc_style_template_8.jpg"; ?>" >Style 8</option>
-                                        
+                                        <option value="wodgc_style_template_1" <?php echo  esc_attr($style1) ?> imgLink="<?php echo esc_url(WODGC_ACC_URL."backend/assets/images/wodgc_style_template_1.jpg"); ?>" >Style 1</option>
+                                        <option value="wodgc_style_template_2" <?php echo  esc_attr($style2) ?> imgLink="<?php echo esc_url(WODGC_ACC_URL."backend/assets/images/wodgc_style_template_2.jpg"); ?>" >Style 2</option>
+                                       
                                     </select>
                                     </p>
+                                    
                                 </div>
 
                                 <div class="gcol-2">
@@ -642,10 +631,8 @@ function wodgc_type_product_data_content_fun() {
                                     ?>
                                     <p>
                                     <select name="wodgc_email_template" id="wodgc_email_template" onchange="wodgcEmailTempImgPreview()">
-                                        <option value="wodgc_email_template_1" <?php echo $emailT1 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle1.jpg"; ?>" >Email Style 1</option>
-                                        <option value="wodgc_email_template_2" <?php echo $emailT2 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle2.jpg"; ?>" >Email Style 2</option>
-                                        <option value="wodgc_email_template_3" <?php echo $emailT3 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle3.jpg"; ?>" >Email Style 3</option>
-                                        <option value="wodgc_email_template_3" <?php echo $emailT3 ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle3.jpg"; ?>" >gggggggggg 3</option>
+                                        <option value="wodgc_email_template_1" <?php echo esc_attr($emailT1); ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle1.jpg"; ?>" >Email Style 1</option>
+                                        <option value="wodgc_email_template_2" <?php echo esc_attr($emailT2); ?> imgLink="<?php echo WODGC_ACC_URL."backend/assets/images/pdfStyle2.jpg"; ?>" >Email Style 2</option>
                                     </select>
 
                                     <span class="dashicons dashicons-visibility" onclick="wodgcPreviewEmailTempImageShownInPopup()" ></span>
@@ -696,7 +683,6 @@ function wodgc_type_product_data_content_fun() {
 
 }
 
-
 add_action( 'woocommerce_process_product_meta', 'wodgc_save_gift_card_form_field' );
 function wodgc_save_gift_card_form_field(  ){
 
@@ -742,7 +728,7 @@ function wodgc_save_gift_card_form_field(  ){
     $couponUse     = isset($_POST['wodgc_individual_use']) ? 'true' : 'false';
     $couponESItems = isset($_POST['wodgc_exclude_sale_items']) ? 'true' : 'false';
     $sendEmail     = isset($_POST['wodgc_send_email']) ? 'true' : 'false';
-    $sendEmailEna  = $_POST['gift_card_send_email_enable'];
+    $sendEmailEna  = sanitize_text_field($_POST['gift_card_send_email_enable']);
 
     if( !empty($wc_field)){
         update_post_meta( $post_id, 'gift_card_form', $wc_field );

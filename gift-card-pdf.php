@@ -1,5 +1,5 @@
 <?php
-	
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	require 'vendor/autoload.php';
 	
 	// reference the Dompdf namespace
@@ -40,6 +40,9 @@
 	$keys_array  = array("{gift_card_img}", "{gift_card_amount}", "{gift_card_expiry_date}", "{gift_card_no}");
 	$values_array= array($mainImg, $total, $expiryDate, $idGiftCard);
 
+	// var_dump($infoFromElements);
+	// exit();
+
 	for ($i = 0; $i < count($infoFromElements); $i++) {
 		$key=$infoFromElements[$i][0];
 		$value=$infoFromElements[$i][1];
@@ -59,11 +62,6 @@
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>Document</title>
-			<style>
-				html { margin: 0px}
-				@page { margin: 0px; }
-				body { margin: 0px; }
-			</style>
 		</head>
 		<body>
 			'.$pdfBody.'

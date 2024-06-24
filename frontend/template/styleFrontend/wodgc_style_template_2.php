@@ -55,11 +55,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <p id="gift_card_message_text"  class="gift_card_message_text"></p>
                 </div>
                 <div class="barcode-image">
-                    <img class="qrcode-image" style="width: 130px;" src="<?php echo $rootFolder . 'images/qrCode-gifttowallet.com.png';?>">
+                    <img class="qrcode-image" style="width: 130px;" src="<?php echo esc_url($rootFolder . 'images/qrCode-gifttowallet.com.png');?>">
                 </div>
             </div>
             <div class="barcode-image-second">
-                <img class="qrcode-image-second-mini" style="max-width: 230px;" src="<?php echo $rootFolder . 'images/barcode-gifttowallet.gif';?>">
+                <img class="qrcode-image-second-mini" style="max-width: 230px;" src="<?php echo esc_url($rootFolder . 'images/barcode-gifttowallet.gif');?>">
             </div>
         </div>
 

@@ -94,7 +94,7 @@ function wodgc_setting_fun(){
           <td>
               <input type="hidden" name="action" value="update">
               <input type="hidden" name="page_options" value="wodgc_disable_edit_card, wodgc_disable_sms_send, wodgc_sms_user_id, wodgc_sms_user_pass, wodgc_sms_body">
-              <input type="submit" name="submit" value="<?php _e('Save Changes', 'gift-card-wooxperto-llc') ?>">
+              <input type="submit" name="submit" value="<?php esc_attr_e('Save Changes', 'gift-card-wooxperto-llc'); ?>">
           </td>
         </tr>
       </table>
@@ -172,7 +172,7 @@ function wodgc_backend_assets() {
   wp_enqueue_script('jquery-ui-datepicker');
 
   wp_enqueue_script('select2', plugin_dir_url(__FILE__) . 'backend/assets/js/select2.min.js', array('jquery'), '4.0.13', true );
-  // wp_enqueue_script('jquery-ui', plugin_dir_url(__FILE__) . 'backend/assets/js/jquery-ui.js', array('jquery'), '4.0.13', true );
+  
   wp_enqueue_script('wp_admin_script', plugin_dir_url(__FILE__ ) . 'backend/assets/js/wp_admin.js', array('jquery','jquery-ui-core', 'jquery-ui-datepicker'), '5.0.55', true );
 
 
@@ -366,7 +366,7 @@ function wodgc_add_to_cart() {
     if($i>0) sleep(1);
 
     $product_id         = sanitize_text_field($_POST['product_id'][$i]);
-    $gift_card_image    = $_POST['gift_card_image'][$i];
+    $gift_card_image    = sanitize_text_field($_POST['gift_card_image'][$i]);
     $gift_card_amount   = sanitize_text_field($_POST['gift_card_amount'][$i]);
     $gift_card_info_form= sanitize_text_field($_POST['gift_card_info_form'][$i]);
     $unique_cart_item_key = md5(microtime() . rand());
@@ -389,7 +389,7 @@ function wodgc_add_to_cart() {
 
   $response['type']='success';
   $response['successMessages']='Gift Cards added to cart successfully';
-  echo json_encode($response);
+  echo wp_json_encode($response);
   exit;
 
 }
@@ -408,9 +408,11 @@ function wodgc_add_body_class($classes) {
 add_action('init', function() {
   //echo get_option('gift_to_wallet_token');
   if(isset($_GET["gift-card-pdf"]) && isset($_GET["gcpdf"])) {
-    if($_GET["gift-card-pdf"]=='true'&& !empty($_GET["gcpdf"]) && base64_decode($_GET["gcpdf"])>0) {
-      $orderLineItemId = base64_decode($_GET["gcpdf"]);
-      $productId = $_GET["id"];
+    $gcpdf = sanitize_text_field($_GET["gcpdf"]);
+    $giftCardPdf = sanitize_text_field($_GET["gift-card-pdf"]);
+    if($giftCardPdf=='true'&& !empty($gcpdf) && base64_decode($gcpdf)>0) {
+      $orderLineItemId = base64_decode($gcpdf);
+      $productId = sanitize_text_field($_GET["id"]);
       $link = 'aaa';
       //$output=true;
       include('gift-card-pdf.php');
@@ -441,7 +443,7 @@ function wodgc_admin_item_pdf_download_link($item_id, $item, $product) {
     $product_id = $item->get_product_id();
     $is_gift    = $product->get_type();
     if($is_gift=='advanced') {
-      echo'<a style="clear:both;display:block;" target="_blank" href="'.site_url().'?gift-card-pdf=true&gcpdf='.base64_encode($item_id).'&id='.$productId.'" class="gift-card-pdf-download-link home-back">Download a gift card</a>';
+      echo'<a style="clear:both;display:block;" target="_blank" href="'.site_url().'?gift-card-pdf=true&gcpdf='.base64_encode($item_id).'&id='.$product_id.'" class="gift-card-pdf-download-link home-back">Download a gift card</a>';
     }
   }
 
@@ -473,7 +475,7 @@ function wodgc_check_info_fun($jekono){
     <div class="gift-info-left">
       <h4>Gift card check info here</h4>
       <form action="#">
-        <label for="gift-card-no"><?php echo $title; ?>:</label><br>
+        <label for="gift-card-no"><?php echo esc_html($title); ?>:</label><br>
         <input type="text" id="gift-card-no" name="gift-card-no" placeholder="Enter gift card number">
         <br>
         <!-- <input type="submit" value="Submit"> -->
@@ -556,12 +558,10 @@ function wodgc_my_upload_image_save($base64_img, $title) {
     return wp_get_attachment_image_url($attach_id,'full');
 }
 
-
 // ajax process & file upload to wp_media
 function wodgc_img_upload_wp_media() {
 
-
-    $image  = $_POST["image"]; // UploadFile
+    $image  = sanitize_file_name($_POST["image"]); // UploadFile
     $title  = time();
     $imgUrl = wodgc_my_upload_image_save($image, $title); // upload_users_file($image); 
 
@@ -588,11 +588,11 @@ function wodgc_gift_card_info() {
       $data = json_decode($post_content,true);
 
       $sms = 'Look gift card info. on the right side';
-      echo json_encode(['status'=>'ok', 'message' => $sms, 'data' => $data ]);
+      echo wp_json_encode(['status'=>'ok', 'message' => $sms, 'data' => $data ]);
   }else{
     $data = 'Gift Card not found.';
     $sms = 'The gift card is not found in your given number';
-    echo json_encode(['status'=>'notok', 'message' => $sms, 'data' => $data ]);
+    echo wp_json_encode(['status'=>'notok', 'message' => $sms, 'data' => $data ]);
   }
 
   exit(); // wp_die();
@@ -717,3 +717,248 @@ function wodgcSenderReceiverFields($productId){
 }
 
 
+// gift card info form data save to order item meta
+add_action('woocommerce_add_order_item_meta', 'wodgc_add_values_to_order_item_meta', 1, 2);
+if( !function_exists('wodgc_add_values_to_order_item_meta')) {
+    function wodgc_add_values_to_order_item_meta($item_id, $values) {
+        global $woocommerce, $wpdb;
+
+        $user_custom_values=$values['gift_card_custom_val']; // gift_card_custom_val || wodgc_user_custom_data_value
+        
+        if(!empty($user_custom_values)){
+
+            $item 		   = new WC_Order_Item_Product($item_id);
+            $total		   = $item->get_total();
+
+            $product_id    = $item->get_product_id();
+            $current_date  = strtotime(date('d-m-Y'));
+            $expiryDateType= get_post_meta( $product_id, 'gift_card_expiry_date_type', true );
+            // $expiryDate = $expiryDateNumber.' '.$expiryDateType ;	
+            $dateNumber    = get_post_meta( $product_id, 'gift_card_expiry_date', true );
+            $expiryDate    = $dateNumber ? $dateNumber : 1;
+
+            $gtwExpiryDate = '+'.$expiryDate.' '.$expiryDateType; //years
+            $expiry_date   = date('d-m-Y', strtotime($gtwExpiryDate, $current_date));
+        
+            wc_add_order_item_meta($item_id, 'gift_card_date_expiry', $expiry_date);
+
+            $epgi       = get_post_meta( $product_id, 'gift_card_number_show', true );
+            $pdfStyle   = get_post_meta( $product_id, 'gift_card_pdf', true );
+            $emailStyle = get_post_meta( $product_id, 'gift_card_email', true );
+
+            $sendReciveInfo = wodgcSenderReceiverFields($product_id);
+            $topUp = get_post_meta( $product_id, '_gift_card_topup', true );
+            if($topUp==="yes"){
+                $topupCardNo = $values['gift_card_custom_val']['topup_card_no'];
+                
+                $gcItemId = wodgc_item_id_by_gift_card_no($topupCardNo);
+                $oldBalance = wc_get_order_item_meta( $gcItemId, 'gift_card_current_balance', true );
+
+                $order_id= wc_get_order_id_by_order_item_id( $item_id );
+
+                $addTotalBlance = (int)$oldBalance+(int)$total;
+                
+                // var_dump($addTotalBlance);
+                // die($oldBalance);
+
+                wc_update_order_item_meta( $gcItemId, 'gift_card_current_balance', $addTotalBlance, $oldBalance );
+
+                // global $wpdb;
+
+                $table_name = $wpdb->prefix . 'wodgc_transaction';
+                $guid = wodgc_create_guid();
+                $addTotalBalance = (int)$oldBalance+(int)$total;
+
+                $table_name = $wpdb->prefix . 'wodgc_transaction';
+                $guid = wodgc_create_guid();
+                
+                // Check if WooCommerce is active before using its functions
+                $note = ' Gift card number: ' . $topupCardNo . '. Top-up amount: ' . wc_price((int)$total) . '. Order ID: ' . $order_id . '. Item ID: ' . $item_id . '. Previous balance: ' . wc_price((int)$oldBalance) . '. Current balance: ' .wc_price($addTotalBalance);
+
+                // Sample data for insertion
+                $data = array(
+                    'gift_card_no' => $topupCardNo,
+                    'amount' => $total, // - $giftCardValue
+                    'current_balance' => $addTotalBalance,
+                    't_date_time' => current_time('mysql'),
+                    'user_id' => get_current_user_id(),
+                    'note' => $note,
+                    'approved_by' => 'Admin',
+                    'approved_at' => current_time('mysql'),  
+                    't_type' => 1, // 1= add money | 0= remove money
+                    'ref_id' => '564.505',
+                    'uuid' => $guid
+                );
+                // Insert data into the table
+                $wpdb->insert($table_name, $data);
+
+                // need insert new link with info in database table wodgc_transaction
+                wc_add_order_item_meta($item_id, 'topup_card_no', $topupCardNo);
+            }else{
+                $modifiedSendReciveInfo = array_flip($sendReciveInfo); // not use this function need to check
+            
+                // $stripslashes = str_replace("\\","", $values['gift_card_custom_val']['gift_card_info_form']);
+                $stripslashes = stripslashes($user_custom_values['gift_card_info_form']);
+                $infoForm = json_decode($stripslashes, true);
+
+                $infoFormkey = [];
+                $senderReceiverDetails=array();
+                foreach ($infoForm as $item) {
+                    $nameKey = ucfirst($item['nameKey']);
+
+                    if(in_array($item['nameKey'],$sendReciveInfo)){
+                        $key = $array[$item['nameKey']];
+                        wc_add_order_item_meta($item_id,$key,[$item['nameVal']]);
+                        $senderReceiverDetails[$key]=$item['nameVal'];
+                    }
+
+                    // array_push($infoFormkey, [$nameKey,'=======']);
+                    array_push($infoFormkey, [$item['nameKey'],$item['nameVal']]);
+
+                    $nameVal = $item['nameVal'];
+                    if($nameVal !=""){
+                        wc_add_order_item_meta($item_id, $nameKey, $nameVal);
+                    }
+                }
+                wc_add_order_item_meta($item_id, 'info_form_ele', $infoFormkey);
+            }
+
+
+            // wc_add_order_item_meta($item_id, 'info_form', $stripslashes);
+            wc_add_order_item_meta($item_id, 'photo_url', array($user_custom_values['gift_card_image']));
+
+            $imagesUrl = $user_custom_values['gift_card_image'];
+
+            // Get the attachment ID
+            $attachment_id = attachment_url_to_postid($imagesUrl);
+
+            // Genarate gift card number
+            if($epgi === 'true'){
+                
+                $idGiftCard = wodgc_generate_unique_id();
+
+                $pieces = chunk_split($idGiftCard,4,"-");
+                $piece  = explode("-", $pieces);
+                // $gift_card_id = $piece[0].'-'.$product_id.$item_id.'-'.$piece[1];
+                $gift_card_id = $piece[0].'-'.$product_id.'-'.$item_id.'-'.$piece[1];
+
+                wc_add_order_item_meta($item_id, 'gift_card_no', $gift_card_id );
+                wc_add_order_item_meta($item_id, 'gift_card_pdf', [$pdfStyle] );
+                wc_add_order_item_meta($item_id, 'gift_card_email', [$emailStyle] );
+
+                $items 		  = new WC_Order_Item_Product($item_id);
+                $total		  = $items->get_total();
+                wc_add_order_item_meta($item_id, 'gift_card_current_balance', $total );
+
+                $post_type    = "gift-card-number";
+                $post_title   = $gift_card_id; // .uniqid()
+                $post_content = json_encode(array(
+                    'product_id'     => $product_id,
+                    'order_item_id'  => $item_id,
+                    'gift_card_no'   => $gift_card_id,
+                    'gift_card_img'  => $imagesUrl,
+                    'gift_card_price'=> $total,
+                    'gift_card_expiry_date' => $expiry_date
+                ), JSON_UNESCAPED_UNICODE);
+            
+                $new_post = array(
+                    'post_author' => get_current_user_id(),
+                    'post_content'=> $post_content,
+                    'post_title'  => $post_title,
+                    'post_type'   => $post_type,
+                    'post_status' => 'draft'
+                );
+                $post_id = wp_insert_post($new_post);
+
+                // save as post meta
+                update_post_meta( $post_id, 'gift_card_img', $imagesUrl, true );
+                update_post_meta( $post_id, 'gift_card_price', $total, true );
+                update_post_meta( $post_id, 'gift_card_expiry_date', $expiry_date, true );
+                
+                // update_post_meta($post_id, 'gift_card_coupon', true);
+
+                // neet to condition email sent now ro 
+
+                $emailS = get_post_meta( $product_id, 'wodgc_send_email', true );
+                $emailSend  = get_post_meta( $product_id, 'gift_card_send_email_enable', true );
+
+
+                if($emailS==="true"){
+                    
+                    if($emailSend==='wodgc_email_after_checkout'){
+                        
+                        $today = time() + 10; // current time and 10 second later...
+                        $receiveEmail="";
+                        wp_schedule_single_event($today,'wodgc_send_gift_card_action',[$post_id,$item_id, $product_id, $receiveEmail]);
+
+                    } else {
+
+                        if(count($senderReceiverDetails)>0){
+                            $add_cron=false;
+                            $cron_time=0;
+                            $receiveEmail="";
+                            foreach($senderReceiverDetails as $key=>$val){
+                                update_post_meta( $post_id, $key, $val, true );
+                                if($key==='send-date-time'){
+                                    $add_cron=true;
+                                    $cron_time=date('i',strtotime($val)); // Y-m-d H:i
+                                }
+
+                                if($key==='recipient-email'){
+                                    $add_cron=true;
+                                    $receiveEmail=$val; // Y-m-d H:i
+                                }
+
+                            }
+
+                            // initiate a single cron to send this gift card to it's receipient
+                            if($add_cron){
+                                wp_schedule_single_event(time()+$cron_time,'wodgc_send_gift_card_action',[$post_id,$item_id, $product_id, $receiveEmail]);
+                            }
+                        }
+
+                    }
+
+                }
+
+
+                $useCoupon = get_post_meta( $product_id, 'gift_card_no_enable_as_coupon', true );
+                if($useCoupon === 'true'){
+                    // wodgc_generate_coupon($product_id,$couponCode,$amount,$expiryDate);
+                    wodgc_generate_coupon($product_id,$gift_card_id,$total,$expiry_date);
+                    update_post_meta($post_id, 'gift_card_coupon', 'true');
+                }else{
+                    update_post_meta($post_id, 'gift_card_coupon', false);
+                }
+            
+
+                global $wpdb;
+                $table_name = $wpdb->prefix . 'wodgc_transaction';
+                
+                // Sample data for insertion
+                $data = array(
+                  'gift_card_no' => $gift_card_id,
+                  'amount' => $total,
+                  'current_balance' => $total,
+                  't_date_time' => current_time('mysql'),
+                  'user_id' => get_current_user_id(),
+                  'note' => 'Gift card activation with post id = '.$post_id,
+                  'approved_by' => 'Admin',
+                  'approved_at' => current_time('mysql'),
+                  't_type' => 1,
+                  'ref_id' => 'REF123456',
+                  'uuid' => '6ba7b810-9dad-11d1-80b4-00c04fd430c8' // Sample UUID
+                );
+                
+                // Insert data into the table
+                $wpdb->insert($table_name, $data);
+
+            }
+
+            // Update the post meta value
+            update_post_meta( $attachment_id, 'gift_card_processing', false ); // true
+        
+            // wc_add_order_item_meta($item_id, 'send_mail_to_recipient', array($user_custom_values['send_mail_to_recipient']));
+        }
+    }
+}
